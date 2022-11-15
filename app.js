@@ -1,0 +1,76 @@
+
+var pressButton = function(action){
+    var inA = document.getElementById("inputA").value;
+    var inB = document.getElementById("inputB").value;
+    var inC = document.getElementById("inputC").value;
+    let actions = {
+        "add": add(Number(inA), Number(inB)),
+        "multiply": multiply(Number(inA), Number(inB)),
+        "subtract": subtract(Number(inA), Number(inB)),
+        "diskriminant": diskriminant(Number(inA), Number(inB), Number(inC)),
+        "minVal": minVal(Number(inA), Number(inB), Number(inC)),
+        "midVal": midVal(Number(inA), Number(inB), Number(inC)),
+        "maxVal": maxVal(Number(inA), Number(inB), Number(inC)),
+        "showString": showString(inA, inB, inC),
+        "reverse": reverseString(inA, inB, inC),
+        "løs2grads": løs2grads(Number(inA), Number(inB), Number(inC)),
+        "sortByLength": sortByLength(inA, inB, inC),
+        "sortByAlphabet": sortByAlphabet(inA, inB, inC),
+        "kampPoiont": kampPoint(inA),
+        "seriePoint": seriePoint(inA),
+        "vinder": vinder(inA, inB, inC),
+    };
+    result = actions[action];
+    document.getElementById("result").innerHTML = result;
+}
+
+var add = function(a, b){
+    return a + b;
+}
+var subtract = function(a, b){
+    return 0;
+}
+var multiply = function(a, b){
+    return 0;
+}
+// skriv inhold til funk
+var diskriminant = function(a, b, c){
+    return 0    ;
+}
+var løs2grads = function(a, b, c){
+    return "0 og 1" // eller "3" eller "Der findes ingen løsninger";
+}
+var minVal = function(a, b, c){
+
+    return 0;
+}
+var maxVal =  function(a, b, c){
+    return 0;
+}
+var midVal =  function(a, b, c){
+    return 0;
+}
+var showString = function(a, b, c){
+    return "Jeg er skøn";
+}
+var reverseString = function(a, b, c){
+    return "skøn jeg er";
+}
+var sortByLength = function(a, b, c){
+    return "er jeg lang";
+}
+var sortByAlphabet = function(a, b, c){
+    return "er jeg lang";
+}
+var navneLængde = function(a, b, c){
+    return 10;
+}
+var kampPoint = function(a, b, c){
+    return 0;
+}
+var seriePoint = function(a, b, c){
+    return 0;
+}
+var vinder =  function(a, b, c){
+    return "a";
+}

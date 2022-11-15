@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <div id="Lommeregner">
+        <h1> Lommeregner </h1>
+        <label>Det første input. (a) </label>
+        <input id="inputA"/>
+        <label>Det andet input. (b)</label>
+        <input id="inputB"/>
+        <label>Det tredje input. (c)</label>
+        <input id="inputC"/><br>
+        <div id="actionButtons"></div>
+        <h1>Funktioner</h1>
+
+        <button onclick="pressButton('add')">+</button>
+        <button onclick="pressButton('subtract')">-</button>
+        <button onclick="pressButton('multiply')">*</button>
+        <button onclick="pressButton('diskriminant')">disk</button>
+        <button onclick="pressButton('minVal')">min</button>
+        <button onclick="pressButton('midVal')">mid</button>
+        <button onclick="pressButton('maxVal')">max</button>
+        <button onclick="pressButton('showString')">showStr</button>
+        <button onclick="pressButton('reverseString')">revStr</button>
+        <button onclick="pressButton('løs2grads')">løs2grads</button>
+        <button onclick="pressButton('sortByLength')">sortLength</button>
+        <button onclick="pressButton('sortByAlphabet')">sortAlpha</button>
+        <button onclick="pressButton('kampPoint')">kampPoint</button>
+        <button onclick="pressButton('seriePoint')">seriePoint</button>
+        <button onclick="pressButton('vinder')">vinder</button>
+        
+        <h1>Tests</h1>
+        <button onclick="testButton('add')">Test: +</button>
+        <button onclick="testButton('minVal')">Test: min</button>
+        <button onclick="testButton('midVal')">Test: mid</button>
+        <button onclick="testButton('maxVal')">Test: max</button>
+        <button onclick="testButton('showString')">Test: showStr</button>
+        <button onclick="testButton('reverseString')">Test: revStr</button>
+        <button onclick="testButton('løs2grads')">Test: løs2grads</button>
+        <button onclick="testButton('sortByLength')">Test: sortLength</button>
+        <button onclick="testButton('sortByAlphabet')">Test: sortAlpha</button>
+        <button onclick="testButton('kampPoint')">Test: kampPoint</button>
+        <button onclick="testButton('seriePoint')">Test: seriePoint</button>
+        <button onclick="testButton('vinder')">Test: vinder</button>
+        
+        
+        <h2 id="result">Result will be here</h2>
+        <p id="testOutput"></p>
+    </div>
+    <script src="app.js" defer></script>
+    <script src="unitTests.js"></script>
+    
+</body>
+</html>
