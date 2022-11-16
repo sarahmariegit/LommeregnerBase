@@ -17,7 +17,8 @@ var pressButton = function(action){
         "sortByAlphabet": sortByAlphabet(inA, inB, inC),
         "kampPoint": kampPoint(inA),
         "canEnterDemon": canEnterDemon(Number(inA), Boolean(inB), Boolean(inC)),
-        "exactlyOne": exactlyOne(Boolean(inA), Boolean(inB), Boolean(inB))
+        "exactlyOne": exactlyOne(Boolean(inA), Boolean(inB), Boolean(inB)),
+        "exactlyTwo": exactlyTwo(Boolean(inA), Boolean(inB), Boolean(inB)),
     };
     result = actions[action];
     document.getElementById("result").innerHTML = result;
@@ -86,6 +87,12 @@ var canEnterDemon = function(height, withAdult, isTipsy){
  * @returns true if exactly one parameter is true.
  */
 var exactlyOne = function(b1, b2, b3){
+    return false;
+}
+/**
+ * Similar to above true if exactly two parameters is true.
+ */
+var exactlyTwo = function(b1, b2, b3){
     return false;
 }
 

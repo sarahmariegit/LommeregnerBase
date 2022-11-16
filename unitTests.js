@@ -29,6 +29,8 @@ var testButton =  function(action){
         result = testcanEnterDemon();
     else if(action == "testexactlyOne")
         result = testexactlyOne();
+    else if(action == "testexactlyTwo")
+        result = testexactlyTwo();
     else
         console.log("Error: no such test")
     
@@ -372,4 +374,28 @@ var testexactlyOne = function(a, b, c){
         expected: true
     }];
     return runTests(exactlyOne, data);
+}
+var testexactlyTwo = function(a, b, c){
+    data = [{
+        a: false,
+        b: true,
+        c: false,
+        expected: false
+    },{
+        a: false,
+        b: false,
+        c: true,
+        expected: false
+    },{
+        a: true,
+        b: false,
+        c: true,
+        expected: true
+    },{
+        a: false,
+        b: false,
+        c: false,
+        expected: false
+    }];
+    return runTests(exactlyTwo, data);
 }
