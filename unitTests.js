@@ -325,30 +325,6 @@ var testseriePoint = function(a, b, c){
     }];
     return runTests(seriePoint, data);
 }
-var testvinder = function(a, b, c){
-    data = [{
-        a: "VVTTUU",
-        b: "VVTTUU",
-        c: "VVTTUU",
-        expected: "uafgjort"
-    },{
-        a: "VVTTUV",
-        b: "VVTTUU",
-        c: "VVTTUU",
-        expected: "a"
-    },{
-        a: "VTTUV",
-        b: "VTTVV",
-        c: "VTTUU",
-        expected:"b"
-    },{
-        a: "",
-        b: "",
-        c: "",
-        expected: "uafgjort"
-    }];
-    return runTests(vinder, data);
-}
 var testcanEnterDemon = function(a, b, c){
     data = [{
         a: 100,
