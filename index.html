@@ -5,53 +5,65 @@
 </head>
 
 <body>
+    <h1> Lommeregner </h1>
     <div id="Lommeregner">
-        <h1> Lommeregner </h1>
-        <label>Det første input. (a) </label>
-        <input id="inputA"/>
-        <label>Det andet input. (b)</label>
-        <input id="inputB"/>
-        <label>Det tredje input. (c)</label>
-        <input id="inputC"/><br>
-        <div id="actionButtons"></div>
+        <div id="inputs">
+            <label>Det første input. (a) </label>
+            <input id="inputA"/>
+            <label>Det andet input. (b)</label>
+            <input id="inputB"/>
+            <label>Det tredje input. (c)</label>
+            <input id="inputC"/><br>
+            <div id="actionButtons"></div>
+        </div>
         <h1>Funktioner</h1>
+        <div id="functions">
+            <button onclick="pressButton('add')">+</button>
+            <button onclick="pressButton('subtract')">-</button>
+            <button onclick="pressButton('multiply')">*</button>
+            <button onclick="pressButton('diskriminant')">disk</button>
+            <button onclick="pressButton('minVal')">min</button>
+            <button onclick="pressButton('midVal')">mid</button>
+            <button onclick="pressButton('maxVal')">max</button>
+            <button onclick="pressButton('showString')">showStr</button>
+            <button onclick="pressButton('reverseString')">revStr</button>
+            <button onclick="pressButton('løs2grads')">løs2grads</button>
+            <button onclick="pressButton('sortByAlphabet')">sortAlpha</button>
+            <button onclick="pressButton('kampPoint')">kampPoint</button>
+            <button onclick="pressButton('canEnterDemon')">canEnterDemon</button>
+            <button onclick="pressButton('exactlyOne')">exactlyOne</button>
+            <button onclick="pressButton('exactlyTwo')">exactlyTwo</button>
+        </div>
 
-        <button onclick="pressButton('add')">+</button>
-        <button onclick="pressButton('subtract')">-</button>
-        <button onclick="pressButton('multiply')">*</button>
-        <button onclick="pressButton('diskriminant')">disk</button>
-        <button onclick="pressButton('minVal')">min</button>
-        <button onclick="pressButton('midVal')">mid</button>
-        <button onclick="pressButton('maxVal')">max</button>
-        <button onclick="pressButton('showString')">showStr</button>
-        <button onclick="pressButton('reverseString')">revStr</button>
-        <button onclick="pressButton('løs2grads')">løs2grads</button>
-        <button onclick="pressButton('sortByAlphabet')">sortAlpha</button>
-        <button onclick="pressButton('kampPoint')">kampPoint</button>
-        <button onclick="pressButton('canEnterDemon')">canEnterDemon</button>
-        <button onclick="pressButton('exactlyOne')">exactlyOne</button>
-        <button onclick="pressButton('exactlyTwo')">exactlyTwo</button>
         
         <h1>Tests</h1>
-        <button onclick="testButton('add')">Test: +</button>
-        <button onclick="testButton('minVal')">Test: min</button>
-        <button onclick="testButton('midVal')">Test: mid</button>
-        <button onclick="testButton('maxVal')">Test: max</button>
-        <button onclick="testButton('showString')">Test: showStr</button>
-        <button onclick="testButton('reverseString')">Test: revStr</button>
-        <button onclick="testButton('løs2grads')">Test: løs2grads</button>
-        <button onclick="testButton('sortByAlphabet')">Test: sortAlpha</button>
-        <button onclick="testButton('kampPoint')">Test: kampPoint</button>
-        <button onclick="testButton('testcanEnterDemon')">testcanEnterDemon</button>
-        <button onclick="testButton('testexactlyOne')">testexactlyOne</button>
-        <button onclick="testButton('testexactlyTwo')">testexactlyTwo</button>
+        <div id="tests">
+            <button onclick="testButton('add')">Test: +</button>
+            <button onclick="testButton('minVal')">Test: min</button>
+            <button onclick="testButton('midVal')">Test: mid</button>
+            <button onclick="testButton('maxVal')">Test: max</button>
+            <button onclick="testButton('showString')">Test: showStr</button>
+            <button onclick="testButton('reverseString')">Test: revStr</button>
+            <button onclick="testButton('løs2grads')">Test: løs2grads</button>
+            <button onclick="testButton('sortByAlphabet')">Test: sortAlpha</button>
+            <button onclick="testButton('kampPoint')">Test: kampPoint</button>
+            <button onclick="testButton('testcanEnterDemon')">testcanEnterDemon</button>
+            <button onclick="testButton('testexactlyOne')">testexactlyOne</button>
+            <button onclick="testButton('testexactlyTwo')">testexactlyTwo</button>
+        </div>
         
         
-        <h2 id="result">Result will be here</h2>
-        <p id="testOutput"></p>
+        <h2>Result will be here</h2>
+        <div id="result">
+            <p id="testOutput"></p> 
+        </div>
+
     </div>
     <script src="app.js" defer></script>
     <script src="unitTests.js"></script>
+    <script src="logic.js"></script>
+    <script src="data.js"></script>
+    <script src="forPresentation.js"></script>
     
 </body>
 </html>
