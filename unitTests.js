@@ -25,6 +25,12 @@ var testButton =  function(action){
         result = testseriePoint();
     else if(action == "vinder")
         result = testvinder();
+    else if(action == "testcanEnterDemon")
+        result = testcanEnterDemon();
+    else if(action == "testexactlyOne")
+        result = testexactlyOne();
+    else if(action == "testexactlyTwo")
+        result = testexactlyTwo();
     else
         console.log("Error: no such test")
     
@@ -87,20 +93,21 @@ var testløs2grads = function(a, b, c){
         a: 1,
         b: 2,
         c: 3,
-        expected: "Der findes ingen løsninger"
+        expected: null
     },{
         a: -1,
         b: -8,
         c: 2,
-        expected: "udfyld selv"
+        expected: "-8 og 0"
     },{
-        a: 123,
-        b: 987,
-        c: 567,
-        expected: "udfyld selv"
+        a: 1,
+        b: -6,
+        c: 9,
+        expected: 3
     }];
     return runTests(løs2grads, data);
 }
+
 var testminVal = function(a, b, c){
     data = [{
         a: 1,
@@ -233,7 +240,7 @@ var testreverseString = function(a, b, c){
         a: "Virum",
         b: "Gymnasium",
         c: "Styrer",
-        expected: "Styrer Virum Gymnasium"
+        expected: "Styrer Gymnasium Virum"
     }];
     return runTests(reverseString, data);
 }
@@ -320,27 +327,75 @@ var testseriePoint = function(a, b, c){
     }];
     return runTests(seriePoint, data);
 }
-var testvinder = function(a, b, c){
+var testcanEnterDemon = function(a, b, c){
     data = [{
-        a: "VVTTUU",
-        b: "VVTTUU",
-        c: "VVTTUU",
-        expected: "uafgjort"
+        a: 100,
+        b: true,
+        c: false,
+        expected: true
     },{
-        a: "VVTTUV",
-        b: "VVTTUU",
-        c: "VVTTUU",
-        expected: "a"
+        a: 180,
+        b: true,
+        c: false,
+        expected: true
     },{
-        a: "VTTUV",
-        b: "VTTVV",
-        c: "VTTUU",
-        expected:"b"
+        a: 160,
+        b: false,
+        c: false,
+        expected: false
     },{
-        a: "",
-        b: "",
-        c: "",
-        expected: "uafgjort"
+        a: 180,
+        b: true,
+        c: true,
+        expected: false
     }];
-    return runTests(vinder, data);
+    return runTests(canEnterDemon, data);
+}
+var testexactlyOne = function(a, b, c){
+    data = [{
+        a: false,
+        b: true,
+        c: false,
+        expected: true
+    },{
+        a: false,
+        b: false,
+        c: true,
+        expected: true
+    },{
+        a: true,
+        b: false,
+        c: true,
+        expected: false
+    },{
+        a: false,
+        b: false,
+        c: false,
+        expected: true
+    }];
+    return runTests(exactlyOne, data);
+}
+var testexactlyTwo = function(a, b, c){
+    data = [{
+        a: false,
+        b: true,
+        c: false,
+        expected: false
+    },{
+        a: false,
+        b: false,
+        c: true,
+        expected: false
+    },{
+        a: true,
+        b: false,
+        c: true,
+        expected: true
+    },{
+        a: false,
+        b: false,
+        c: false,
+        expected: false
+    }];
+    return runTests(exactlyTwo, data);
 }
