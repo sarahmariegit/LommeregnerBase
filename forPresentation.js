@@ -1,3 +1,6 @@
+displayRunButtons(actions);
+displayTestButtons(actions);
+
 function runFunction(actionName, actions){
     var action = actions[actionName];
 
@@ -13,11 +16,18 @@ function getInput(name) {
     return document.getElementById("input" + name).value;
 }
 
-function makeButtons(actions){
+function displayRunButtons(actions){
     for (const action of Object.entries(actions)) {
         var name = action[0];
         document.getElementById("functions").innerHTML += 
             `<button onclick="runFunction('${name}', actions)">${name}</button>`;
     }
 }
-makeButtons(actions);
+
+function displayTestButtons(actions){
+    for (const action of Object.entries(actions)) {
+        var name = action[0];
+        document.getElementById("tests").innerHTML += 
+            `<button onclick="runTest('${name}', actions, testData)">${name}</button>`;
+    }
+}
