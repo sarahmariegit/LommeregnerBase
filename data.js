@@ -15,7 +15,7 @@ testData.multiply = [
 testData.add1 = testData.add;
 
 testData.sortOnLength = [
-    { a: "a", b: "bb", c: "ccc", expected: ["a", "bb", "ccc"] },
-    { a: "Jeg er streng", b: "Jeg er ikke et tal", c: "Jeg Yoda", expected: [ "Jeg Yoda", "Jeg er streng", "Jeg er ikke et tal"] },
-    { a: "", b:"i", c:"ii", expected: ["", "i", "ii"] }
+    { a: "a", b: "bb", c: "ccc", expected: "a bb ccc" },
+    { a: "Jeg er streng", b: "Jeg er ikke et tal", c: "Jeg Yoda", expected: "Jeg Yoda Jeg er streng Jeg er ikke et tal"},
+    { a: "", b:"i", c:"ii", expected: "i ii"}
 ];
