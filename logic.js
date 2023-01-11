@@ -1,17 +1,3 @@
-function runTest(actionName, actions, testData){
-    result = "";
-    functionUnderTest = actions[actionName].function;
-    data =  testData[actionName];
-    for(var i = 0; i  < data.length; i++){
-        var yourResult = functionUnderTest(data[i].a, data[i].b, data[i].c);
-        var expectedResult = data[i].expected;
-        var passed = yourResult === expectedResult;
-        result += `<span style='color: ${passed ? 'green' : 'red'}'>Test ${i + 1} ${passed? "passed" : "failed"}.</span><br>`;
-        result += passed ? "" : `Got ${yourResult} with test input ${JSON.stringify(data[i])}.<br>`;	
-    }
-    document.getElementById("result").innerHTML = result;
-}
-
 var actions = {};
 
 actions.add = {};
@@ -31,7 +17,7 @@ actions.add1 = {
 actions.sortOnLength = {
     types: [String, String, String],
     function: function(a, b, c){
-        return "a aa ccc";
+        return "a aa aaa";
     }    
 }
 
@@ -43,8 +29,26 @@ actions.multiply = {
     }   
 }
 
+function runTest(actionName, actions, testData){
+    var result = "";
+    var functionUnderTest = actions[actionName].function;
+    var testCases =  testData[actionName];
+    for(var i = 0; i  < testCases.length; i++)
+        result += testFunctionWith(testCases[i], functionUnderTest);	
 
+    document.getElementById("result").innerHTML = result;
+}
 
+function testFunctionWith(testCase, functionUnderTest) {
+    var actual = functionUnderTest(testCase.a, testCase.b, testCase.c);
+    var passed = actual === testCase.expected;
+    var result = `<span style='color: ${passed ? 'green' : 'red'}'>
+                    Test ${passed ? "passed" : "failed"}.
+                </span>
+                <br>`;
+    if(!passed)
+        result += `Got ${actual} with test input ${JSON.stringify(testCase)}.<br>`;
 
-
+    return result;
+}
 

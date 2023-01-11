@@ -1,11 +1,10 @@
 testData = {};
 
 testData.add = [
-    { a: 1, b: 2, expected: 3 },
-    { a: -1, b: -8, expected: -9 },
-    { a: 12435262, b: -33469443, expected: -21034181 }
+    { a: 1, b: 2, c: 0, expected: 3 },
+    { a: -1, b: -8, c: 1, expected: -8 },
+    { a: 12435262, b: -33469443, c: 2, expected: -21034179 }
 ];
-
 
 testData.multiply = [
     { a: 2, b: 2, c: -1, expected: -6 },
