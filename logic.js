@@ -1,9 +1,9 @@
-var actions = {};
-
+window.actions = {};
+console.log("ran logic.js");
 actions.add = {};
 actions.add.types = [Number, Number, Number];
 actions.add.function = function(a, b, c){
-    return a + b + c;
+    return -1;
 }
 
 actions.add1 = {
@@ -29,7 +29,8 @@ actions.multiply = {
     }   
 }
 
-function runTest(actionName, actions, testData){
+
+ window.runTest = function(actionName, actions, testData){
     var result = "";
     var functionUnderTest = actions[actionName].function;
     var testCases =  testData[actionName];
@@ -38,8 +39,7 @@ function runTest(actionName, actions, testData){
 
     document.getElementById("result").innerHTML = result;
 }
-
-function testFunctionWith(testCase, functionUnderTest) {
+ window.testFunctionWith = function(testCase, functionUnderTest) {
     var actual = functionUnderTest(testCase.a, testCase.b, testCase.c);
     var passed = actual === testCase.expected;
     var result = `<span style='color: ${passed ? 'green' : 'red'}'>
@@ -51,4 +51,14 @@ function testFunctionWith(testCase, functionUnderTest) {
 
     return result;
 }
+
+
+try {
+    var functions = (await import("./facit.js")).functions;
+    for(const fName in functions)
+        window.actions[fName].function = functions[fName]; 
+} catch (e) {
+    console.log("facit.js not found");
+}
+
 

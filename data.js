@@ -1,4 +1,4 @@
-testData = {};
+window.testData = {};
 
 testData.add = [
     { a: 1, b: 2, c: 0, expected: 3 },

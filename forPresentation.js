@@ -1,5 +1,5 @@
-displayRunButtons(actions);
-displayTestButtons(actions);
+displayRunButtons(window.actions);
+displayTestButtons(window.actions);
 
 function runFunction(actionName, actions){
     var action = actions[actionName];
