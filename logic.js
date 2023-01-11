@@ -1,5 +1,5 @@
 window.actions = {};
-console.log("ran logic.js");
+
 actions.add = {};
 actions.add.types = [Number, Number, Number];
 actions.add.function = function(a, b, c){
@@ -21,16 +21,23 @@ actions.sortOnLength = {
     }    
 }
 
-// returns product of a, b and c
-actions.multiply = {
-    types: [Number, Number, Number],
-    function: function(a, b, c){
+// returns the sum of the ages of the three persons
+actions.totalAge = {
+    types: [JSON.parse, JSON.parse, JSON.parse],
+    function: function(alice, bob, cat){
         return -1;
-    }   
-}
+    }
+};
 
+//returns the average age of the three persons
+actions.averageAge = {
+    types: [JSON.parse, JSON.parse, JSON.parse],
+    function: function(alice, bob, cat){
+        return -1;
+    }
+};
 
- window.runTest = function(actionName, actions, testData){
+window.runTest = function(actionName, actions, testData){
     var result = "";
     var functionUnderTest = actions[actionName].function;
     var testCases =  testData[actionName];
@@ -39,7 +46,8 @@ actions.multiply = {
 
     document.getElementById("result").innerHTML = result;
 }
- window.testFunctionWith = function(testCase, functionUnderTest) {
+
+window.testFunctionWith = function(testCase, functionUnderTest) {
     var actual = functionUnderTest(testCase.a, testCase.b, testCase.c);
     var passed = actual === testCase.expected;
     var result = `<span style='color: ${passed ? 'green' : 'red'}'>
